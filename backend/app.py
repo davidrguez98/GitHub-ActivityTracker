@@ -34,8 +34,10 @@ def GitHub_report():
         language_data = requests.get(language_url).json()
 
         for key in language_data.items():
-            languages = [] 
-            languages.append(key)
-            print(languages) #Quiero que me aparezcan todos los lenguajes que se han usado. Ya después representarlos en una lista y en una sección a parte el más usado.
+            """ languages = [] 
+            languages.append(key) """
+            """ print(languages) #Quiero que me aparezcan todos los lenguajes que se han usado. Ya después representarlos en una lista y en una sección a parte el más usado.
+            print(language_data) """ #Sale un diccionario con todos los lenguajes usados
+            print(key) #Voy a intentar imprimir key a ver si se me hace un listado.
 
 GitHub_report()
