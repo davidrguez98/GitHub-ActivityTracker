@@ -11,16 +11,17 @@
     <main>
         <section id="inicio">
             <h1>Git Hub Activity Tracker</h1>
-            <input type="text" placeholder="Introduce el usuario">
-            <button>
-                <i class="fa fa-search"></i>
-            </button>
+            <form id="search-form">
+                <input type="text" id="username" placeholder="Introduce el usuario" required>
+                <button id="searchButton" type="button">
+                    <i class="fa fa-search"></i> Buscar
+                </button>
+            </form>
         </section>
         <section id="estadisticas">
-            <div class="grafico">
-                <!-- Gráfico de estadísticas aquí -->
-            </div>
+            <div id="report"></div>
         </section>
     </main>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
