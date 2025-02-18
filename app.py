@@ -18,4 +18,14 @@ def github():
 
 if __name__ == "__main__":
     app.run(debug=True)
-    
+
+
+import requests
+
+def check_rate_limit():
+    url = "https://api.github.com/rate_limit"
+    response = requests.get(url).json()
+    print(response)  # Muestra el límite en la consola
+    return response
+
+check_rate_limit()

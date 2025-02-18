@@ -15,7 +15,7 @@ def GitHub_report(user_name):
         "Nombre": user_data.get("name", "None"),
         "Fecha de creación": user_data.get("created_at"),
         "Repositorios": user_data.get("public_repos", 0),
-        "repos": []
+        "repositories": []
     }
 
 
@@ -49,7 +49,7 @@ def GitHub_report(user_name):
 
             repo_info["lenguajes"].append(key)
 
-        report["repos"].append(repo_info)
+        report["repositories"].append(repo_info)
 
     return report
             
