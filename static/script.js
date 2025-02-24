@@ -28,21 +28,21 @@ document.getElementById('searchButton').addEventListener('click', function() {
         }
 
         let reportContent = `
-            <p><strong>Nombre:</strong> ${data.name || 'No disponible'}</p>
-            <p><strong>Fecha de creación:</strong> ${data.created_at}</p>
-            <p><strong>Repositorios:</strong> ${data.public_repos}</p>
+            <p><strong>Nombre:</strong> ${data.Nombre || 'No disponible'}</p>
+            <p><strong>Fecha de creación:</strong> ${data["Fecha de creación"] || 'No disponible'}</p>
+            <p><strong>Repositorios:</strong> ${data.Repositorios || 'No disponible'}</p>
             <h3>Repositorios:</h3>
             <ul>
         `;
 
         data.repositories.forEach(repo => {
-            let languages = Array.isArray(repo.languages) ? repo.languages : [];
+            let languages = Array.isArray(repo.lenguajes) ? repo.lenguajes : [];
             let languagesList = languages.length > 0 ? languages.join(', ') : 'No disponible';
-        
+
             reportContent += `
                 <li>
-                    <strong>${repo.name}</strong>
-                    <br>Lenguaje más usado: ${repo.most_used_language || 'No disponible'}
+                    <strong>${repo.nombre}</strong>
+                    <br>Lenguaje más usado: ${languagesList.length > 0 ? languagesList[0] : 'No disponible'}
                     <br>Lenguajes usados: ${languagesList}
                 </li>
             `;
